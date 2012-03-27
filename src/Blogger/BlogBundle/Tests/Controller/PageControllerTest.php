@@ -33,7 +33,7 @@ class PageControllerTest extends WebTestCase
         // Mais celui-ci oui ...
         $this->assertEquals(1, $crawler->filter('h2:contains("A day with Symfony2")')->count(), $blogTitle);
         
-        // Alors que $blogTitle = A day with Symfony2
+        // Alors que $blogTitle = 'A day with Symfony2'
         $this->assertTrue(is_string($blogLink->text()));
     }
 }
