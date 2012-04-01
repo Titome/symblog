@@ -17,6 +17,8 @@ class BlogController extends Controller
         
         $comments = $em->getRepository('BloggerBlogBundle:Comment')->getCommentsForBlog($blog->getId());
         
+        $blog->setTitle(trim($blog->getTitle()));
+        
         return $this->render('BloggerBlogBundle:Blog:show.html.twig', array(
             'blog'     => $blog,
             'comments' => $comments
